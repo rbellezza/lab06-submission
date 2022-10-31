@@ -2,8 +2,9 @@ def menu():
     print('''Simple Calculator
 ------------------
 0.) Addition
-1.) Check Operation History
-2.) Exit Program\n''')
+1.) Subtraction
+2.) Check Operation History
+3.) Exit Program\n''')
 
 
 # Create a main function to operate the program
@@ -30,15 +31,23 @@ def main():
             operations += 1
             operation_history.append(["Addition", first_number, second_number, result_num])
             print("The result of adding the numbers together is ", result_num)
-
+            
         elif int(user_input) == 1:
+            first_number = int(input("Please enter the first number you would like to subtract."))
+            second_number = int(input("Please enter the second number you would like to subtract."))
+            result_num = first_number - second_number
+            operations += 1
+            operation_history.append(["Subtraction", first_number, second_number, result_num])
+            print("The result of subtracting the numbers from each other is ", result_num)
+
+        elif int(user_input) == 2:
             if operations <= 0:
                 print("No valid operations to process!")
             else:
                 print("The previous history of operations is the following. Individual operations are put within [].")
                 print(operation_history)
 
-        elif int(user_input) == 2:
+        elif int(user_input) == 3:
             print("Thank you for using this calculator. Goodbye!")
             break
             
